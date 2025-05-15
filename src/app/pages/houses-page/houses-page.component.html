@@ -1,0 +1,25 @@
+<h1 class="font-bold text-3xl text-center">
+    {{ 3 }} casas disponibles
+</h1>
+
+<div class="gap-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 p-4 w-full">
+    @for (house of houses(); track house.id; let i = $index) {
+    <div class="bg-base-100 shadow-sm w-full card">
+        <app-mini-map />
+        <div class="card-body">
+            <h2 class="card-title">
+                {{ house.name }}
+                @if (i === 1) {
+                <div class="badge badge-secondary">NEW</div>
+                }
+            </h2>
+            <p>{{ house.description }}</p>
+            <div class="justify-end items-center card-actions">
+                @for (tag of house.tags; track tag) {
+                <div class="pb-1 leading-relaxed badge-primary badge">{{ tag }}</div>
+                }
+            </div>
+        </div>
+    </div>
+    }
+</div>

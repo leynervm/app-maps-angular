@@ -1,0 +1,16 @@
+<div class="w-full max-w-full h-[calc(100vh-64px)]" #map></div>
+
+<section id="controls " class="right-2 bottom-2 z-[9999] fixed bg-white p-5 rounded-2xl">
+    <h2 class="mb-2 font-bold text-primary text-2xl">
+        Zoom :
+        <small class="font-semibold text-primary">{{ zoom() | number:'1.0-0' }}</small>
+    </h2>
+    <input type="range" min="1" max="19" [value]="zoom()" (input)="zoom.set(+txtZoom.value)" class="range range-primary"
+        #txtZoom />
+
+
+    <h2 class="mb-2 font-bold text-primary text-2xl">
+        Coordenadas :
+    </h2>
+    <pre class="text-primary">{{ coordinates() | json }}</pre>
+</section>

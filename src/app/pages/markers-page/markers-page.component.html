@@ -1,0 +1,24 @@
+<div class="w-full max-w-full h-[calc(100vh-64px)]" #map></div>
+
+<section id="controls "
+    class="top-16 left-5 z-[699] fixed bg-white p-5 rounded-2xl max-h-[calc(100vh-86px)] overflow-y-auto">
+    <h2 class="mb-2 font-bold text-primary text-2xl">
+        Zoom :
+        <small class="font-semibold text-primary">{{ zoom() | number:'1.0-0' }}</small>
+    </h2>
+
+    <div class="flex flex-col gap-2">
+        @for (marker of markers(); track marker.id) {
+        <div>
+            <label (click)="flyToMarker(marker.mapboxMarker.getLatLng())" (dblclick)="deleteMarker(marker)"
+                [for]="marker.id" class="flex justify-between gap-1 cursor-pointer label">
+                <pre class="flex-1 font-semibold text-primary text-xs text-left">
+                    {{ marker.mapboxMarker.getLatLng() | json }}</pre>
+                <input type="radio" [id]="marker.id" name="markers" [style]="{backgroundColor: marker.color}"
+                    class="bg-white checked:bg-primary border-primary checked:border-primary checked:text-primary radio" />
+            </label>
+        </div>
+        }
+    </div>
+
+</section>

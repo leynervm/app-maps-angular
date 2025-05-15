@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import 'leaflet/dist/leaflet.css';
+
+@plugin "daisyui" {
+    themes: light --default, dark --prefersdark, black;
+}
+
+.router-link-active {
+    @apply bg-primary;
+}
