@@ -1,7 +1,7 @@
-<div class="w-full max-w-full h-[calc(100vh-64px)]" #map></div>
+<div class="w-full max-w-full h-[calc(60vh-64px)] sm:h-[calc(100vh-64px)]" #map></div>
 
 <section id="controls "
-    class="top-16 left-5 z-[699] fixed bg-white p-5 rounded-2xl max-h-[calc(100vh-86px)] overflow-y-auto">
+    class="sm:top-16 left-5 z-[699] sm:fixed bg-white p-3 sm:rounded-2xl max-h-[40vh] sm:max-h-[calc(100vh-86px)] overflow-y-auto">
     <h2 class="mb-2 font-bold text-primary text-2xl">
         Zoom :
         <small class="font-semibold text-primary">{{ zoom() | number:'1.0-0' }}</small>

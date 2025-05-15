@@ -4,8 +4,8 @@
 
 <div class="gap-4 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 p-4 w-full">
     @for (house of houses(); track house.id; let i = $index) {
-    <div class="bg-base-100 shadow-sm w-full card">
-        <app-mini-map />
+    <div class="shadow-md shadow-neutral-500 w-full card">
+        <app-mini-map [coordinates]="house.lngLat" />
         <div class="card-body">
             <h2 class="card-title">
                 {{ house.name }}

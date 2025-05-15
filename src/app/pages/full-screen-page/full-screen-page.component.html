@@ -1,6 +1,6 @@
 <div class="w-full max-w-full h-[calc(100vh-64px)]" #map></div>
 
-<section id="controls " class="right-2 bottom-2 z-[9999] fixed bg-white p-5 rounded-2xl">
+<section id="controls " class="sm:right-2 bottom-1 sm:bottom-2 z-[9999] fixed bg-white p-3 rounded-2xl w-full sm:w-auto">
     <h2 class="mb-2 font-bold text-primary text-2xl">
         Zoom :
         <small class="font-semibold text-primary">{{ zoom() | number:'1.0-0' }}</small>
@@ -9,8 +9,8 @@
         #txtZoom />
 
 
-    <h2 class="mb-2 font-bold text-primary text-2xl">
+    <h2 class="mb-2 font-bold text-primary text-lg">
         Coordenadas :
     </h2>
-    <pre class="text-primary">{{ coordinates() | json }}</pre>
+    <pre class="text-primary text-xs">{{ coordinates() | json }}</pre>
 </section>
